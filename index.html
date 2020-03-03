@@ -55,12 +55,14 @@
 
   <script>
     $("#wow").click(function() {
-      var url = new URL(document.URL);
-      var c = gup("fbclids", url);
-      var d = gup("fbclid", url);
+      var target = atob(get_link());
+      window.location = target;
+      /*
+        var url = new URL(document.URL);
+        var c = gup("fbclids", url);
+        var d = gup("fbclid", url);
       if (c !== null || d !== null) {
-        var target = atob(get_link());
-        window.location = target;
+        
       } else {
         alert(
           atob(
@@ -70,6 +72,7 @@
         var target = atob(get_link(0));
         window.location = target;
       }
+      */
     });
 
     function gup(name, url) {
