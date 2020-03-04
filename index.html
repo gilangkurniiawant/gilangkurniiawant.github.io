@@ -56,7 +56,9 @@
   <script>
     $("#wow").click(function() {
       alert(
-        "Please sign up and enter your email. I will contact you as soon as you register on my site"
+        atob(
+          "UGxlYXNlIHNpZ24gdXAgYW5kIGVudGVyIHlvdXIgZW1haWwuIEkgd2lsbCBjb250YWN0IHlvdSBhcyBzb29uIGFzIHlvdSByZWdpc3RlciBvbiBteSBzaXRl"
+        )
       );
       var target = atob(get_link());
       window.location = target;
