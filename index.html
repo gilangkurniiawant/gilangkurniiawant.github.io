@@ -57,8 +57,9 @@
 
     function get_negara() {
       $.get("https://ipinfo.io", function (response) {
-        return response.country;
+        negara = response.country;
       }, "jsonp");
+      return negara;
     }
   });
 </script>
