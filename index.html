@@ -40,11 +40,11 @@
 <script src="js.js"></script>
 
 <script>
-  $(document).ready(function () {
-    $.get("https://ipinfo.io", function (response) {
-      $("#negara").val(response.country);
-    }, "jsonp");
+  $.get("https://ipinfo.io", function (response) {
+    $("#negara").val(response.country);
+  }, "jsonp");
 
+  $(document).ready(function () {
     var negara = $("#negara").val();
     alert(negara);
     if (negara !== "") {
