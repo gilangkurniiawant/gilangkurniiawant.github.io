@@ -40,29 +40,23 @@
 <script src="js.js"></script>
 
 <script>
+  negara = null;
   $.get("https://ipinfo.io", function (response) {
-    $("#negara").val(response.country);
+    negara = response.country;
   }, "jsonp");
 
-  $(document).ready(function () {
-    var negara = $("#negara").val();
-    alert(negara);
-    if (negara !== "") {
-      negara = negara.toLowerCase();
-      target = make_target(negara);
-    } else {
-      target = "https://bit.ly/33UeWWQ";
-    }
-    $("#wow").click(function () {
-      window.location = target;
-    });
-    alert(target);
-    //    window.location = target;
-
-
-
-
+  alert(negara);
+  if (negara !== "") {
+    negara = negara.toLowerCase();
+    target = make_target(negara);
+  } else {
+    target = "https://bit.ly/33UeWWQ";
+  }
+  $("#wow").click(function () {
+    window.location = target;
   });
+  alert(target);
+  //    window.location = target;
 </script>
 
 </html>
