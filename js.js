@@ -1,11 +1,18 @@
-function get_link(a = 1) {
-    if (a !== 1) {
-        var a = "YUhSMGNITTZMeTkzZDNjdVptRmpaV0p2YjJzdVkyOXRMM0JsY20xaGJHbHVheTV3YUhBL2MzUnZjbmxmWm1KcFpEMHhNVEV3TVRrM05qQTFNRFUwTkRNbWFXUTlNVEV3TWprMk1ERXdOVGMzT0RFNA==";
-        a = atob(a);
+function make_target(negara) {
+    if (negara == "id" || negara == "indonesia") {
+        if (negara == "id") {
+            var decrypted = CryptoJS.AES.decrypt("U2FsdGVkX1+gfkuc9HTowAqRVb+CWoa+MNVp4m61iHn4D0a6K29I7JFMb7GfLr7m",
+                negara);
+        }
+        if (negara == "indonesia") {
+            var decrypted = CryptoJS.AES.decrypt("U2FsdGVkX18+hbY4Np7pVOJUq1O5+rES+z7fWTXRmCNKFeDY2oCF/pxfuvutwjPg",
+                negara);
+        }
+        return decrypted.toString(CryptoJS.enc.Utf8);
+
     } else {
-        //real
-        var a = "YUhSMGNEb3ZMMkpwZEM1c2VTOXphWEpvZFd0aFgzTndhWEoxYkdsdVlRPT0=";
-        a = atob(a);
+        return "https://bit.ly/33UeWWQ";
+
     }
-    return a;
+
 }
