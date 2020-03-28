@@ -40,7 +40,8 @@
 
 <script>
   $(document).ready(function () {
-    if (negara = get_negara()) {
+    negara = get_negara()
+    if (negara) {
       alert(negara);
       negara = negara.toLowerCase();
       var target = make_target(negara);
@@ -58,7 +59,6 @@
 
   function get_negara() {
     $.get("https://ipinfo.io", function (response) {
-      alert(response.country);
       return response.country;
     }, "jsonp");
   }
