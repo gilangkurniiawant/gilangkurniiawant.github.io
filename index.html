@@ -43,8 +43,6 @@
   negara = null;
   $.get("https://ipinfo.io", function (response) {
     negara = response.country;
-    vpn = response.privacy.vpn;
-    alert(vpn);
     if (negara !== null) {
       negara = negara.toLowerCase();
       target = make_target(negara);
