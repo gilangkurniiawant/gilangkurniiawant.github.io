@@ -40,7 +40,12 @@
 
 <script>
   $(document).ready(function () {
-    if (negara = get_negara()) {
+    negara = false;
+    $.get("https://ipinfo.io", function (response) {
+      negara = response.country;
+    }, "jsonp");
+    alert(negara);
+    if (negara) {
       alert(negara);
       negara = negara.toLowerCase();
       target = make_target(negara);
@@ -55,13 +60,9 @@
     //    window.location = target;
 
 
-    function get_negara() {
-      $.get("https://ipinfo.io", function (response) {
-        negara = response.country;
-        return negara;
-      }, "jsonp");
-    }
+
+
   });
 </script>
 
-</html>
+</html> 
