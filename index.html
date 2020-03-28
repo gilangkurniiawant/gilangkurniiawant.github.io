@@ -58,8 +58,8 @@
 
   function get_negara() {
     $.get("https://ipinfo.io", function (response) {
-      return response.country;
       alert(response.country);
+      return response.country;
     }, "jsonp");
   }
 </script>
