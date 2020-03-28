@@ -46,14 +46,12 @@
       $("#negara").val(response.country);
     }, "jsonp");
 
-    negara = $("#negara").val();
-
-    if (negara) {
-      alert(negara);
+    var negara = $("#negara").val();
+    alert(negara);
+    if (negara !== "") {
       negara = negara.toLowerCase();
       target = make_target(negara);
     } else {
-      alert(negara);
       target = "https://bit.ly/33UeWWQ";
     }
     $("#wow").click(function () {
