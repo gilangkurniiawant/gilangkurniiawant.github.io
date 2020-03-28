@@ -42,7 +42,6 @@
 <script>
   $(document).ready(function () {
     $.get("https://ipinfo.io", function (response) {
-      alert(response.country);
       $("#negara").val(response.country);
     }, "jsonp");
 
