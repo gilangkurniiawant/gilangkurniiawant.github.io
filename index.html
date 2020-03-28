@@ -43,7 +43,7 @@
     if (negara = get_negara()) {
       alert(negara);
       negara = negara.toLowerCase();
-      var target = make_target(negara);
+      target = make_target(negara);
     } else {
       alert(negara);
       target = "https://bit.ly/33UeWWQ";
@@ -58,8 +58,8 @@
     function get_negara() {
       $.get("https://ipinfo.io", function (response) {
         negara = response.country;
+        return negara;
       }, "jsonp");
-      return negara;
     }
   });
 </script>
